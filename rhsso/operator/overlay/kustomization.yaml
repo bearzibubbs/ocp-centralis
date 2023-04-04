@@ -4,8 +4,8 @@ kind: Kustomization
 
 namespace: sso
 
-resources:
-  - https://github.com/bearzibubbs/gitops/rhsso/operator/base
+bases:
+  - https://github.com/bearzibubbs/gitops/rhsso/operator/base/
 
 patches:
   - patch: |-
