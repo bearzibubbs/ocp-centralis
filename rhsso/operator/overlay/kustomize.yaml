@@ -5,7 +5,7 @@ kind: Kustomization
 namespace: sso
 
 resources:
-  - gitops/rhsso/operator/base
+  - github.com/bearzibubbs/gitops/rhsso/operator/base
 
 patches:
   - patch: |-
