@@ -1,0 +1,19 @@
+---
+apiVersion: applications.argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: home-assistant
+  namespace: gitops
+spec:
+  destination:
+    server: https://kubernetes.default.svc 
+  source: 
+    repoURL: git@github.com:bearzibubbs/ocp-centralis
+    path: home-assistant/overlay
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
+
+    

@@ -1,0 +1,34 @@
+apiVersion: kustomize.config.k8s.io/v1alpha1
+kind: Component
+
+resources:
+- ldapidm-secret.yaml
+
+patches:
+  - patch: |-
+      - op: add
+        path: /spec/identityProviders/-
+        value:
+          name: ldapidm
+          mappingMethod: claim
+          type: LDAP
+          ldap:
+            attributes:
+              id: 
+              - dn
+              email:
+              - mail
+              name:
+              - cn
+              preferredUsername:
+              - uid
+              bindDN: "uid=ocp-binddn,cn=sysaccounts,cn=etc,dc=nekohouse,dc=ca"
+              bindPassword:
+                name: ldapidm-secret
+              insecure: false
+              url: "ldap://idm.nekohouse.ca/cn=groups,cn=accounts,dc=nekohouse,dc=ca?cn"
+    target:
+      group: config.openshift.io
+      kind: OAuth
+      name: cluster
+      version: v1
