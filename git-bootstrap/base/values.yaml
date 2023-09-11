@@ -62,13 +62,13 @@ applications:
     source:
       path: git-apps/eso/overlay
 
-  rhsso:
-        annotations:
-      argocd.argoproj.io/sync-wave: '2'
-    destination: 
-      namespace: openshift-operators
-    source:
-      path: git-apps/rhsso/operator/overlay
+  # rhsso:
+  #       annotations:
+  #     argocd.argoproj.io/sync-wave: '2'
+  #   destination: 
+  #     namespace: openshift-operators
+  #   source:
+  #     path: git-apps/rhsso/operator/overlay
 
   # gitops-dashboards:
   #   annotations:
