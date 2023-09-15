@@ -1,0 +1,42 @@
+apiVersion: keycloak.org/v1alpha1
+kind: KeycloakRealm
+metadata:
+  labels:
+    app: sso
+  name: nekohouse-local
+  namespace: keycloak
+spec:
+  instanceSelector:
+    matchLabels:
+      app: sso
+  realm:
+    displayName: nekohouse-local
+    enabled: true
+    id: test-realm
+    realm: nekohouse-local
+    userFederationProviders:
+      - displayName: "ldap"
+        providerName: "ldap"
+        config:
+          vendor: "other"
+          connectionUrl: "ldap://idm.nekohouse.ca"
+          bindDn: "uid=ocp-binddn,cn=sysaccounts,cn=etc,dc=nekohouse,dc=ca"
+          # This reads the REALM-SECRET from /opt/jboss/keycloak/secrets
+          # In this example, the secret key is called ldap-realm_bindCredential
+          # See deploy/examples/keycloak/keycloak-with-vault.yaml for an
+          # example of how to setup the vault secret directory
+          #bindCredential: "${vault.bindCredential}"
+          bindCredential: "g_YDdz!4WQ4-GXgZZRHN"
+          usersDn: cn=users,cn=accounts,DC=nekohouse,DC=ca
+          usernameLDAPAttribute: "uid"
+          uuidLDAPAttribute: "ipaUniqueID"
+          searchScope: "2" # sub
+          # useTruststoreSpi: "ldapsOnly"
+          # trustEmail: "true"
+          userObjectClasses: "inetOrgPerson, organizationalPerson"
+          rdnLDAPAttribute: "uid"
+          editMode: "READ_ONLY"
+        priority: 0
+        fullSyncPeriod: 650000
+        changedSyncPeriod: 325000
+          # debug: "false"
