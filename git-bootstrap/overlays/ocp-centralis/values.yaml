@@ -143,3 +143,9 @@ applications:
   #     namespace: acm-policies
   #   source:
   #     path: components/kyverno-acm/base
+
+  home-assistant:
+    destination:
+      namespace: nekohome-assistant
+    source: 
+      path: git-apps/home-assistant/ocp-centralis

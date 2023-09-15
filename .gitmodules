@@ -1,0 +1,3 @@
+[submodule "git-apps/ocp4-app-homeassistant"]
+	path = git-apps/ocp4-app-homeassistant
+	url = git@github.com:bearzibubbs/ocp4-app-homeassistant.git
