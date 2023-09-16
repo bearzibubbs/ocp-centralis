@@ -22,7 +22,7 @@ projects:
     sourceRepos:
     - https://github.com/bearzibubbs/ocp-centralis.git
     - https://github.com/redhat-cop/gitops-catalog
-    - git@github.com:bearzibubbs/ocp4-app-homeassistant.git
+    - https://github.com/bearzibubbs/ocp4-app-homeassistant.git
     # - https://github.com/gnunn-gitops/cluster-config.git
     destinations: |
       - namespace: '*'
