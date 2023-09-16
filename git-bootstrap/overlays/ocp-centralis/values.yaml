@@ -149,4 +149,4 @@ applications:
       namespace: nekohome-assistant
     source: 
       repoURL: https://github.com/bearzibubbs/ocp4-app-homeassistant.git
-      path: overlays/ingress/openshift
+      path: overlays/clusters/hub
