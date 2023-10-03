@@ -34,16 +34,16 @@ projects:
 
 applications:
 
-  # compliance-operator:
-  #   annotations:
-  #     argocd.argoproj.io/compare-options: IgnoreExtraneous
-  #     argocd.argoproj.io/sync-wave: '21'
-  #   destination:
-  #     namespace: openshift-compliance
-  #   source:
-  #     path: compliance-operator/aggregate/scheduled
-  #     repoURL: https://github.com/redhat-cop/gitops-catalog
-  #     targetRevision: HEAD
+  compliance-operator:
+    annotations:
+      argocd.argoproj.io/compare-options: IgnoreExtraneous
+      argocd.argoproj.io/sync-wave: '21'
+    destination:
+      namespace: openshift-compliance
+    source:
+      path: compliance-operator/aggregate/scheduled
+      repoURL: https://github.com/bearzibubbs/gitops
+      targetRevision: HEAD
 
   # container-security:
   #   annotations:
