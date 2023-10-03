@@ -22,7 +22,7 @@ projects:
     sourceRepos:
     - https://github.com/bearzibubbs/ocp-centralis.git
     - https://github.com/redhat-cop/gitops-catalog
-    - https://github.com/bearzibubbs/gitops
+    - git@github.com:bearzibubbs/gitops.git
     - https://github.com/bearzibubbs/ocp4-app-homeassistant.git
     # - https://github.com/gnunn-gitops/cluster-config.git
     destinations: |
@@ -43,7 +43,7 @@ applications:
       namespace: openshift-compliance
     source:
       path: compliance-operator/aggregate/scheduled
-      repoURL: https://github.com/bearzibubbs/gitops
+      repoURL: git@github.com:bearzibubbs/gitops.git
       targetRevision: HEAD
 
   # container-security:
