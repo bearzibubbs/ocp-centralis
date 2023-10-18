@@ -49,7 +49,7 @@ applications:
       namespace: open-cluster-management
     source:
       repoURL: git@github.com:bearzibubbs/gitops.git
-      path: advanced-cluster-management/instance/mininal
+      path: advanced-cluster-management/instance/minimal
 
   # acm-observability:
   #   annotations:
