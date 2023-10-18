@@ -33,14 +33,23 @@ applications:
   #   source:
   #     path: clusters/overlays/local.hub/components/acs-operator
 
-  # acm-hub:
+  acm-hub-operator:
+    annotations:
+      argocd.argoproj.io/sync-wave: '21'
+    destinations:
+      namespace: open-cluster-management
+    source:
+      repoURL: git@github.com:bearzibubbs/gitops.git
+      path: advanced-cluster-management/operator/overlays/release-2.8
+
+  # acm-hub-instance:
   #   annotations:
-  #     argocd.argoproj.io/sync-wave: '21'
+  #     argocd.argoproj.io/sync-wave: '22'
   #   destinations:
   #     namespace: open-cluster-management
   #   source:
-  #     repoURL: https://github.com/gnunn-gitops/acm-hub-bootstrap.git
-  #     path: components/apps/acm/overlays/hub
+  #     repoURL: git@github.com:bearzibubbs/gitops.git
+  #     path: advanced-cluster-management/instance/miminal
 
   # acm-observability:
   #   annotations:
