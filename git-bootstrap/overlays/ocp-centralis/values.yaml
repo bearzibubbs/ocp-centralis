@@ -42,14 +42,14 @@ applications:
       repoURL: git@github.com:bearzibubbs/gitops.git
       path: advanced-cluster-management/operator/overlays/release-2.8
 
-  # acm-hub-instance:
-  #   annotations:
-  #     argocd.argoproj.io/sync-wave: '22'
-  #   destinations:
-  #     namespace: open-cluster-management
-  #   source:
-  #     repoURL: git@github.com:bearzibubbs/gitops.git
-  #     path: advanced-cluster-management/instance/miminal
+  acm-hub-instance:
+    annotations:
+      argocd.argoproj.io/sync-wave: '22'
+    destinations:
+      namespace: open-cluster-management
+    source:
+      repoURL: git@github.com:bearzibubbs/gitops.git
+      path: advanced-cluster-management/instance/miminal
 
   # acm-observability:
   #   annotations:
