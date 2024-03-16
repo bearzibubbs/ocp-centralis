@@ -63,7 +63,7 @@ applications:
     destination:
       namespace: openshift-operators
     source:
-      path: git-apps/eso/overlay
+      path: components/eso/overlay
 
   # rhsso:
   #       annotations:
